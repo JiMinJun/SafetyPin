@@ -1,0 +1,29 @@
+<ion-view title="Profile" id="page8">
+  <ion-content padding="true" class="has-header">
+    <div>
+      <img src="img/XEKmvXedQmiHA5kNXRVZ_male-user-shadow_318-34042.jpg" style="display: block; width: 50%; height: auto; margin-left: auto; margin-right: auto;">
+    </div>
+    <form id="profile-form1" class="list">
+      <p>
+        Name: Harry Potter
+        <br> City: Hogsmeade
+      </p>
+      <ion-toggle toggle-class="toggle-positive" ng-checked="true" id="profile-toggle1">Opt in as an Ally?</ion-toggle>
+      <label class="item item-select" id="profile-select1">
+        <span class="input-label">Radius</span>
+        <select>
+          <option>5 blocks</option>
+          <option>1 mile</option>
+          <option>2 miles</option>
+          <option>5 miles</option>
+        </select>
+      </label>
+      <label class="item item-input" id="profile-input2">
+        <span class="input-label">Languages</span>
+        <input type="text" placeholder="i.e English">
+      </label>
+    </form>
+    <div class="spacer" style="width: 300px; height: 35px;"></div>
+    <a ui-sref="home()" id="profile-button24" class="button button-balanced button-block">Save</a>
+  </ion-content>
+</ion-view>
