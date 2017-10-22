@@ -62,6 +62,12 @@ angular.module('app.routes', [])
     controller: 'chaperoneViewCtrl'
   })
 
+  .state('allyUnavailable', {
+    url: '/page10',
+    templateUrl: 'templates/allyUnavailable.html',
+    controller: 'allyUnavailabeCtrl'
+  })
+
 $urlRouterProvider.otherwise('/')
 
 

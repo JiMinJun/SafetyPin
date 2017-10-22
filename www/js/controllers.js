@@ -132,4 +132,9 @@ function ($scope, $stateParams) {
 		$scope.showButtons = false;
 	}
 }])
+
+.controller('allyUnavailabeCtrl', ['$scope', '$stateParams',
+function($scope, $stateParams) {
+	
+}])
  
