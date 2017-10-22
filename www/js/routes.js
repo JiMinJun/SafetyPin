@@ -56,6 +56,12 @@ angular.module('app.routes', [])
     controller: 'profileCtrl'
   })
 
+  .state('chaperoneView', {
+    url: '/page9',
+    templateUrl: 'templates/chaperoneView.html',
+    controller: 'chaperoneViewCtrl'
+  })
+
 $urlRouterProvider.otherwise('/')
 
 
