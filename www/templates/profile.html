@@ -8,11 +8,10 @@
         Name: Harry Potter
         <br> City: Hogsmeade
       </p>
-      <ion-toggle toggle-class="toggle-positive" ng-checked="true" id="profile-toggle1">Opt in as an Ally?</ion-toggle>
+      <ion-toggle ng-model="profile.isOptedIn" toggle-class="toggle-positive" id="profile-toggle1">Opt in as an Ally?</ion-toggle>
       <label class="item item-select" id="profile-select1">
         <span class="input-label">Radius</span>
-        <select ng-model="profile.radius" ng-init="profile.radius = radii[0]" ng-options="radius.view for radius in radii">
-        </select>
+        <select ng-model="profile.radius" ng-options="radius for radius in radii" ng-value="radius"></select>
       </label>
       <label class="item item-input" id="profile-input2">
         <span class="input-label">Languages</span>
