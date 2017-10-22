@@ -1,24 +1,32 @@
 <ion-view title="Login" id="login">
-  <ion-content padding="true" class="has-header">
+  <ion-content padding="true" class="has-header" style="background-color: #272289;">
     <div class="spacer" style="width: 100px; height: 70px;"></div>
-    <h1 id="home-heading1" style="color:#000000;text-align:center;">Safety Pin</h1>
+    <div style="text-align: center;">
+      <img src="../img/SafetyPintextlogowhite.png">
+    </div>
     <div class="spacer" style="width: 300px; height: 20px;"></div>
     <!--<ion-spinner icon="circles" ng-if="loading"></ion-spinner>-->
     <ion-slides options="options" slider="data.slider" style="height: 350px;">
-      <ion-slide-page>
-        <div style="text-align: center;">
-          <img src="../img/Pinlogo.png">
-        </div>
+      <ion-slide-page style="text-align: center;">
+        <img src="../img/pinlogowhite.png" style="height: 300px; width: 200px;">
       </ion-slide-page>
-      <ion-slide-page>
-        <div style="text-align: center;">
-          <h1>Let the mischeif commence!</h1>
-        </div>
+      <ion-slide-page style="text-align: center;">
+        <img src="../img/community_white.png" style="height: 230px; width: 300px;">
+        <h2 style="color: white; margin: 0; padding: 0;">
+          Welcome to the Community!
+        </h2>
       </ion-slide-page>
-      <ion-slide-page>
-        <div style="text-align: center;">
-          <h1>Mischeif managed.</h1>
-        </div>
+      <ion-slide-page style="text-align: center;">
+        <img src="../img/seeker_white.png" style="height: 230px; width: 280px;">
+        <h2 style="color: white; margin: 0; padding: 0;">
+          Seek a phone call or a chaperone.
+        </h2>
+      </ion-slide-page>
+      <ion-slide-page style="text-align: center;">
+        <img src="../img/ally_white.png" style="height: 250px; width: 300px;">
+        <h2 style="color: white; margin: 0; padding: 0;">
+          Become an ally!
+        </h2>
       </ion-slide-page>
     </ion-slides>
     <a ui-sref="home()" id="home-button1" class="button button-positive button-block">Connect With <i class="fa fa-facebook-official" aria-hidden="true"></i></a>
