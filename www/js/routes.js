@@ -8,6 +8,11 @@ angular.module('app.routes', [])
   // Each state's controller can be found in controllers.js
   $stateProvider
     
+  .state('login', {
+    url: '/',
+    templateUrl: 'templates/login.html',
+    controller: 'loginCtrl'
+  })
 
       .state('home', {
     url: '/page1',
@@ -51,7 +56,7 @@ angular.module('app.routes', [])
     controller: 'profileCtrl'
   })
 
-$urlRouterProvider.otherwise('/page1')
+$urlRouterProvider.otherwise('/')
 
 
 });
