@@ -1,5 +1,5 @@
 angular.module('app.controllers', [])
-  
+
 .controller('loginCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
@@ -18,7 +18,7 @@ function ($scope, $stateParams) {
 
 
 }])
-   
+
 .controller('phoneCallCtrl', ['$scope', '$stateParams',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
@@ -26,7 +26,7 @@ function ($scope, $stateParams) {
 
 
 }])
-   
+
 .controller('chaperoneCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
@@ -34,7 +34,7 @@ function ($scope, $stateParams) {
 
 
 }])
-   
+
 .controller('contactingAlliesCtrl', ['$scope', '$stateParams', '$state','$rootScope', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
@@ -45,12 +45,12 @@ function ($scope, $stateParams, $state,$rootScope) {
 			$state.go('allyFound');
 		}, 5000);
 	});
-	
+
 	$scope.$on('$ionicView.leave', function(){
 		clearTimeout($scope.timeout);
 	});
 }])
-   
+
 .controller('noAlliesFoundCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
@@ -58,7 +58,7 @@ function ($scope, $stateParams) {
 
 
 }])
-   
+
 .controller('allyFoundCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
@@ -66,16 +66,22 @@ function ($scope, $stateParams) {
 
 
 }])
-   
-.controller('profileCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+
+.controller('profileCtrl', ['$scope', '$state', '$stateParams', '$rootScope', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
-	$scope.profile = {
-		isOptedIn: true,
-		radius: "5 blocks",
-		languages: "English"
-	};
+function ($scope, $state, $stateParams, $rootScope) {
+
+  $scope.save = function() {
+    $rootScope.profile = $scope.profile;
+    $state.go('home');
+  }
+
+  $scope.profile = {
+    isOptedIn: $rootScope.profile.isOptedIn,
+    radius: $rootScope.profile.radius,
+    languages: $rootScope.profile.languages
+  }
 
 	$scope.radii = [
 		{
@@ -109,4 +115,3 @@ function ($scope, $stateParams) {
 
 
 }])
- 
