@@ -19,20 +19,18 @@ function ($scope, $stateParams) {
 
 }])
    
-.controller('phoneCallCtrl', ['$scope', '$stateParams',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('phoneCallCtrl', ['$scope', '$stateParams', '$rootScope',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
-
-
+function ($scope, $stateParams, $rootScope) {
+	$rootScope.requestType = 'phoneCall';
 }])
    
-.controller('chaperoneCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('chaperoneCtrl', ['$scope', '$stateParams', '$rootScope',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
-
-
+function ($scope, $stateParams, $rootScope) {
+	$rootScope.requestType = 'chaperone';
 }])
    
 .controller('contactingAlliesCtrl', ['$scope', '$stateParams', '$state','$rootScope', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
@@ -42,7 +40,7 @@ function ($scope, $stateParams, $state,$rootScope) {
 	$scope.$on('$ionicView.enter', function() {
 		$rootScope.allyNeeded = true;
 		$scope.timeout = setTimeout(function() {
-			$state.go('allyFound');
+			$state.go('allyFound')
 		}, 5000);
 	});
 	
@@ -87,37 +85,27 @@ var options = {timeout: 10000, enableHighAccuracy: true};
 
 }])
    
-.controller('profileCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('profileCtrl', ['$scope', '$state', '$stateParams', '$rootScope', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
+function ($scope, $state, $stateParams, $rootScope) {
+	
+	$scope.save = function() {
+		$rootScope.profile = $scope.profile;
+		$state.go('home');
+	}
+	
 	$scope.profile = {
-		isOptedIn: true,
-		radius: "5 blocks",
-		languages: "English"
-	};
+	    isOptedIn: $rootScope.profile.isOptedIn,
+	    radius: $rootScope.profile.radius,
+	    languages: $rootScope.profile.languages
+	}
 
-	$scope.radii = [
-		{
-			value: 1,
-			view: "5 blocks"
-		},
-		{
-			value: 2,
-			view: "10 blocks"
-		},
-		{
-			value: 3,
-			view: "1 mile"
-		},
-		{
-			value: 4,
-			view: "2 miles"
-		},
-		{
-			value: 5,
-			view: "5 miles"
-		},
+	$scope.radii = ["5 blocks",
+		"10 blocks",
+		"1 mile",
+		"2 miles",
+		"5 miles",
 	];
 
 }])
