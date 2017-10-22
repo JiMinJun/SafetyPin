@@ -3,12 +3,15 @@
     <h1 id="allyFound-heading7" style="color:#000000;text-align:center;">Ally Found</h1>
     <ion-list id="allyFound-list1">
       <ion-item class="item-avatar" id="allyFound-list-item1">
+        
+          <img src="../img/Malcolm.jpg" style="display: block; width: 50%; height: auto; margin-left: auto; margin-right: auto;">
         <h2>Ethan </h2>
         <p ng-if="requestType == 'chaperone'">10 minutes away</p>
         <p ng-if="requestType != 'chaperone'">Calling you now...</p>
       </ion-item>
     </ion-list>
-        <div ng-if="requestType == 'chaperone'" id="map" data-tap-disabled="true" style="width:100%; height:75%" ></div>
+    <div ng-if="requestType != 'chaperone'" style="width:100%; height:67%"></div>
+        <div ng-if="requestType == 'chaperone'" id="map" data-tap-disabled="true" style="width:100%; height:67%" ></div>
     <!-- <div>
       <img src="img/80mOHqYTS6WyCZLOQzRQ_maps.PNG" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
     </div> -->

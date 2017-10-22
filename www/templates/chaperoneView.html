@@ -3,18 +3,23 @@
     <h1 id="chaperoneView-heading" style="color:#000000;text-align:center;">Seeker Request</h1>
     <ion-list id="chaperoneView-list">
       <ion-item class="item-avatar" id="chaperoneView-list-item">
+        
+        <img src="../img/Angela.jpg" style="display: block; width: 50%; height: auto; margin-left: auto; margin-right: auto;">
         <h2>Susan </h2>
         <p>10 minutes away</p>
-        <p>Needs a phone call</p>
+        <p>Needs a chaperone</p>
       </ion-item>
     </ion-list>
     <div id="chaperoneView-button1" class="button-bar">
       <a id="chaperoneView-button2" class="button button-balanced button-block" ng-if="showButtons" ng-click="helpSeeker()">Help</a>
       <a ui-sref="allyUnavailable()" id="phoneCall-button8" class="button button-assertive button-block" ng-if="showButtons">Not Now</a>
     </div>
+    
+    <div id="map1" data-tap-disabled="true" style="width:100%; height:64%" ></div>
     <div>
-      <img src="img/80mOHqYTS6WyCZLOQzRQ_maps.PNG" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+      <!--<img src="img/80mOHqYTS6WyCZLOQzRQ_maps.PNG" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">-->
+
     </div>
-    <a ui-sref="home()" id="chaperoneView-button" class="button button-assertive button-block button-clear">Cancel</a>
+    <a ng-if="!showButtons" ui-sref="home()" id="chaperoneView-button" class="button button-assertive button-block button-clear">Cancel</a>
   </ion-content>
 </ion-view>

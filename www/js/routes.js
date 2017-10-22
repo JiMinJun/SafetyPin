@@ -68,6 +68,12 @@ angular.module('app.routes', [])
     controller: 'allyUnavailabeCtrl'
   })
 
+  .state('facebook', {
+    url: '/facebook',
+    templateUrl: 'templates/facebook.html',
+    controller: 'facebookCtrl'
+  })
+
 $urlRouterProvider.otherwise('/')
 
 

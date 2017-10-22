@@ -9,6 +9,7 @@ function ($scope, $stateParams,$state) {
   		loop: true,
   		speed: 500
 	};
+	
 }])
 
 .controller('homeCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
@@ -110,19 +111,46 @@ function ($scope, $state, $stateParams, $rootScope) {
 
 }])
 
-.controller('chaperoneViewCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('chaperoneViewCtrl', ['$scope', '$stateParams', '$cordovaGeolocation', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
+function ($scope, $stateParams, $cordovaGeolocation) {
 	$scope.showButtons = true;
 	
 	$scope.helpSeeker = function() {
 		$scope.showButtons = false;
 	}
+
+		
+		   var latLng = new google.maps.LatLng(32.708325, -117.158268);
+		
+		   var mapOptions = {
+			 center: latLng,
+			 zoom: 16,
+			 mapTypeId: google.maps.MapTypeId.ROADMAP
+		   };
+		
+		   $scope.map = new google.maps.Map(document.getElementById("map1"), mapOptions);
+		   var marker = new google.maps.Marker({
+				   position: latLng,
+				   map: $scope.map
+				 });
+		
+		 
 }])
 
 .controller('allyUnavailabeCtrl', ['$scope', '$stateParams',
 function($scope, $stateParams) {
 	
+}])
+   
+.controller('facebookCtrl', ['$scope', '$stateParams', '$state',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+// You can include any angular dependencies as parameters for this function
+// TIP: Access Route Parameters for your page via $stateParams.parameterName
+function ($scope, $stateParams, $state) {
+	$scope.goHome = function() {
+
+		$state.go('home');
+	}
 }])
  
